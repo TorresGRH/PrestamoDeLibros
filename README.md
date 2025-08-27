@@ -15,6 +15,7 @@ Generación de reportes estadísticos de la biblioteca.
 
 Este proyecto está pensado para fines educativos y como base para sistemas más complejos, integrables con bases de datos y APIs REST.
 
+
 🚀 Características principales
 
 Creación y gestión de libros (título, autor, género, ISBN).
@@ -29,6 +30,7 @@ Detección de libros vencidos y cálculo de multas automáticas.
 
 Reportes estadísticos en tiempo real.
 
+
 🛠 Tecnologías utilizadas
 
 Lenguaje: JavaScript (ES6+)
@@ -36,6 +38,7 @@ Lenguaje: JavaScript (ES6+)
 Entorno de ejecución: Node.js (recomendado v14 o superior)
 
 No requiere librerías externas (100% nativo de JS).
+
 
 📂 Estructura de la clase
 
@@ -71,6 +74,7 @@ Devuelve una lista de libros vencidos y sus multas.
 generateLibraryReport()
 Genera un reporte con estadísticas generales de la biblioteca.
 
+
 📌 Ejemplo de uso
 // Crear instancia
 const myLibrary = new LibrarySystem();
@@ -87,6 +91,7 @@ const searchResults = myLibrary.searchBooks('soledad');
 // Generar reporte
 myLibrary.generateLibraryReport();
 
+
 📊 Ejemplo de reporte generado
 {
   "totalBooks": 3,
@@ -95,6 +100,7 @@ myLibrary.generateLibraryReport();
   "overdueBooks": 0,
   "totalFines": 0
 }
+
 
 💡 Posibles mejoras futuras
 
@@ -106,7 +112,10 @@ Interfaz web para gestión de libros y reportes.
 
 Implementación de autenticación de usuarios.
 
+Ingresos manuales del usuario y no con valores definidos especificos.
+
+
 🧑‍💻 Autor
 
 German Ricardo Torres Hernández
-Proyecto para fines educativos y demostrativos.
+Proyecto gesrtion de biblioteca servicios WEB.
