@@ -1,5 +1,5 @@
 /**
- * Clase para manejar el sistema de gestión de biblioteca.
+ * Clase para manejar el sistema de gestión de biblioteca con un constructor.
  */
 class LibrarySystem {
   constructor() {
@@ -8,9 +8,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 1: createBook(title, author, genre, isbn)
-   * Propósito: Crear un nuevo objeto libro.
-   * Retorna: Objeto libro.
+   * FUNCIÓN 1: Crear un nuevo objeto libro y retorna el objeto libro.
    */
   createBook(title, author, genre, isbn) {
     if (!title || !author || !genre || !isbn) {
@@ -32,9 +30,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 2: addBookToLibrary(title, author, genre, isbn)
-   * Propósito: Agregar un libro a la biblioteca.
-   * Retorna: El libro creado.
+   * FUNCIÓN 2: Agregar un libro a la biblioteca y retorna el libro creado.
    */
   addBookToLibrary(title, author, genre, isbn) {
     const newBook = this.createBook(title, author, genre, isbn);
@@ -44,9 +40,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 3: removeBookFromLibrary(id)
-   * Propósito: Eliminar un libro de la biblioteca por ID.
-   * Retorna: El libro eliminado o null si no existe.
+   * FUNCIÓN 3: Eliminar un libro de la biblioteca por ID y retorna el libro eliminado o null si no existe.
    */
   removeBookFromLibrary(id) {
     const index = this.books.findIndex(book => book.id === id);
@@ -60,9 +54,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 4: borrowBook(bookId, borrowerName, days = 14)
-   * Propósito: Prestar un libro a un usuario.
-   * Retorna: Objeto con { success, message, book, dueDate }.
+   * FUNCIÓN 4: Prestar un libro a un usuario y retorna objeto con { success, message, book, dueDate }.
    */
   borrowBook(bookId, borrowerName, days = 14) {
     const book = this.books.find(b => b.id === bookId);
@@ -89,9 +81,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 5: returnBook(bookId)
-   * Propósito: Devolver un libro prestado.
-   * Retorna: Objeto con { success, message, fine }.
+   * FUNCIÓN 5: Devolver un libro prestado y retorna el objeto con { success, message, fine }.
    */
   returnBook(bookId) {
     const book = this.books.find(b => b.id === bookId);
@@ -120,9 +110,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 6: calculateFine(dueDate, fineRate = 0.50)
-   * Propósito: Calcular multa por retraso.
-   * Retorna: Número de la multa.
+   * FUNCIÓN 6: Calcular multa por retraso y retorna el numero de la multa.
    */
   calculateFine(dueDate, fineRate = 0.50) {
     const now = new Date();
@@ -135,9 +123,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 7: searchBooks(criteria)
-   * Propósito: Buscar libros por criterios.
-   * Retorna: Array de libros que coinciden.
+   * FUNCIÓN 7: Buscar libros por criterios y retorna array de libros que coinciden.
    */
   searchBooks(criteria) {
     const lowerCaseCriteria = criteria.toLowerCase();
@@ -151,9 +137,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 8: getBooksByGenre(genre)
-   * Propósito: Obtener libros por género específico.
-   * Retorna: Array de libros del género especificado.
+   * FUNCIÓN 8: Obtener libros por género específico y retorna Array de libros del género especificado.
    */
   getBooksByGenre(genre) {
     const lowerCaseGenre = genre.toLowerCase();
@@ -163,9 +147,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 9: getOverdueBooks(fineRate = 0.50)
-   * Propósito: Obtener lista de libros vencidos.
-   * Retorna: Array de objetos con información de libros vencidos.
+   * FUNCIÓN 9: Obtener lista de libros vencidos y retorna Array de objetos con información de libros vencidos.
    */
   getOverdueBooks(fineRate = 0.50) {
     const overdueList = [];
@@ -184,9 +166,7 @@ class LibrarySystem {
   }
 
   /**
-   * FUNCIÓN 10: generateLibraryReport()
-   * Propósito: Generar reporte estadístico de la biblioteca.
-   * Retorna: Objeto con estadísticas.
+   * FUNCIÓN 10: Generar reporte estadístico de la bibliotecay retorna el objeto con estadísticas.
    */
   generateLibraryReport() {
     const borrowedCount = this.borrowedBooks.size;
@@ -208,7 +188,7 @@ class LibrarySystem {
   }
 }
 
-// --- Ejemplo de uso del sistema de biblioteca ---
+// --- Ejemplo de uso del sistema de biblioteca con datos implicitos sin entrada por consola ---
 
 // Crear una instancia del sistema
 const myLibrary = new LibrarySystem();
@@ -225,7 +205,7 @@ const borrowResult1 = myLibrary.borrowBook(book1.id, 'Juan Pérez', 7);
 // Para esta prueba, cambia la fecha de vencimiento a una fecha pasada
 if (borrowResult1.success) {
   const overdueBook = myLibrary.books.find(b => b.id === book1.id);
-  overdueBook.dueDate = new Date(new Date().setDate(new Date().getDate() - 5)); // 5 días de retraso
+  overdueBook.dueDate = new Date(new Date().setDate(new Date().getDate() - 5)); // Pone 5 días de retraso
 }
 
 // Prestar el libro 3
